@@ -15,7 +15,7 @@ function serialize(req,res) {
       }
       
     });
-    res.status(200).json({data:JSON.stringify(req.data)});
+    res.status(200).json({data:req.data});
   }
 }
 
