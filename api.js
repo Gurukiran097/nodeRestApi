@@ -9,6 +9,7 @@ var middleware = function(config,context,models){
 function generateRoute(app,context,models) {
   for(var endpoints in context.rules){
     var routeConfig = context.rules[endpoints];
+    app.use(endpoints + '/:id',middleware(routeConfig,context,models));
     app.use(endpoints,middleware(routeConfig,context,models));
   }
 }
