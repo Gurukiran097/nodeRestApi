@@ -1,7 +1,12 @@
 var router = {};
 
 router.get = function(req,res,next) {
-  req.model.find({},function(err,data){
+  var query = {};
+  if(req.params[req.context.parameter]){
+    query = {'_id': req.params[req.context.parameter]};
+    console.log(req.params);
+  }
+  req.model.find(query,function(err,data){
     req.err = err;
     req.data = data;
     next(req,res);
