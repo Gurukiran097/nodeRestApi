@@ -2,6 +2,7 @@
   "serializer":"./serializers/json-serializer",
   "rules":{
     "/feedback":{
+      "parameter":"id",
       "db":"feedback",
       "modelName":"feedback",
       "mixin":"./mixin/listViewMixin",
